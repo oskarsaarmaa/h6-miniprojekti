@@ -7,8 +7,10 @@
 
 ### 1. Kloonaa repositorio
 git clone https://github.com/oskarsaarmaa/h6-miniprojekti
+
 cd h6-miniprojekti
 
 ### 2. Asenna Ansible
 sudo apt update
+
 sudo apt install ansible -y
