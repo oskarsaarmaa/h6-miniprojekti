@@ -1,5 +1,7 @@
-# h6-miniprojekti
+# (projektin nimi)
 
+## Projektin tarkoitus
+(tekstiä)
 
 
 ---
