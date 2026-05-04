@@ -1,0 +1,26 @@
+
+- name: Deploy GameInsights Hub
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Build GameInsights Docker image
+      community.docker.docker_image:
+        name: game-insights-app
+        build:
+          path: .
+        source: build
+
+    - name: Run GameInsights Container
+      community.docker.docker_container:
+        name: game-insights-service
+        image: game-insights-app
+        state: started
+        restart_policy: always
+        published_ports:
+          - "5000:5000"

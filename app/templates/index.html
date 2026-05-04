@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameInsights Hub | Technical Demo</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --accent-color: #3d5afe;
+            --text-main: #e0e0e0;
+            --text-muted: #9e9e9e;
+            --score-color: #4caf50;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto 3rem auto;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #252525;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .score-badge {
+            display: inline-block;
+            color: var(--score-color);
+            border: 1px solid var(--score-color);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .meta-data {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .meta-data div {
+            margin-bottom: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>GameInsights Hub</h1>
+    <p>Market Data Analysis: High-Rated Releases</p>
+</header>
+
+<main class="grid">
+    {% for game in games %}
+    <article class="card">
+        <img src="{{ game.image }}" alt="" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">{{ game.name }}</h2>
+            <div class="score-badge">Metacritic: {{ game.rating }}</div>
+            
+            <div class="meta-data">
+                <div>Release Date: {{ game.released }}</div>
+                <div>Platforms: {{ game.platforms[:3]|join(', ') }}</div>
+                <div>Category: {{ game.genres[:2]|join(', ') }}</div>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</main>
+
+</body>
+</html>
