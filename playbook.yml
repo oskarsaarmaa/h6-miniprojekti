@@ -10,6 +10,7 @@
         update_cache: yes
 
     - name: Build GameInsights Docker image
+        # Note: community.docker is required
       community.docker.docker_image:
         name: game-insights-app
         build:

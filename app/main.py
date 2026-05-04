@@ -1,52 +1,55 @@
 import os
 import requests
 from flask import Flask, render_template
-from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-# Initialize environment variables and Flask app
-load_dotenv()
 app = Flask(__name__)
 
-# Fetch API key from .env file
-RAWG_API_KEY = os.getenv("RAWG_API_KEY")
+RAWG_API_KEY = "8dd3b98aadc54844964a64bdc08ab6eb"
 
 @app.route('/')
 def index():
-    """
-    Fetches top-rated games from the last 30 days using RAWG API.
-    Returns a rendered dashboard with game metadata.
-    """
-    # Define the date range for 'New Releases' (Last 30 days)
-    end_date = datetime.now().strftime('%Y-%m-%d')
-    start_date = (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d')
+    today = datetime.now().strftime('%Y-%m-%d')
+    # Haetaan pelit viimeisen 12 kuukauden ajalta (365 päivää)
+    last_year = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
     
-    # API endpoint with filters for date, ordering (Metacritic), and page size
-    url = f"https://api.rawg.io/api/games?key={RAWG_API_KEY}&dates={start_date},{end_date}&ordering=-metacritic&page_size=10"
+    url = f"https://api.rawg.io/api/games?key={RAWG_API_KEY}&dates={last_year},{today}&ordering=-added&page_size=20"
     
     try:
-        response = requests.get(url)
-        response.raise_for_status()  # Check for HTTP request errors
+        response = requests.get(url, timeout=10)
         data = response.json()
-        
         games = []
-        for game in data.get('results', []):
-            # Parse only necessary fields for the UI
+        
+        results = data.get('results')
+        if not results:
+            return "API ei palauttanut tuloksia juuri nyt."
+
+        for game in results:
+            ratings = game.get('ratings')
+            if ratings and len(ratings) > 0:
+                title = ratings[0].get('title', 'Hyvä').capitalize()
+                percent = ratings[0].get('percent', 0)
+                top_review = f"{title} ({percent}% arvioista)"
+            else:
+                top_review = "Odottaa pelaajien tuomioita"
+
+            platforms_data = game.get('platforms') or []
+            platform_list = [p['platform']['name'] for p in platforms_data if p.get('platform')]
+
             games.append({
-                'name': game.get('name'),
-                'released': game.get('released'),
-                'image': game.get('background_image'),
-                'rating': game.get('metacritic') or "N/A",
-                'genres': [g['name'] for g in game.get('genres', [])],
-                'platforms': [p['platform']['name'] for p in game.get('platforms', [])]
+                'name': game.get('name', 'Nimetön peli'),
+                'released': game.get('released', 'Tuntematon'),
+                'image': game.get('background_image') or '',
+                'metacritic': game.get('metacritic'),
+                'user_rating': game.get('rating') or 0,
+                'sentiment': top_review,
+                'platforms': platform_list[:3]
             })
-            
+                
         return render_template('index.html', games=games)
-    
-    except requests.exceptions.RequestException as e:
-        # Basic error handling for API connection issues
-        return f"Database connection error: {str(e)}", 500
+
+    except Exception as e:
+        return f"Sovellusvirhe: {str(e)}"
 
 if __name__ == '__main__':
-    # Running on 0.0.0.0 to allow access from outside the Docker container
     app.run(debug=True, host='0.0.0.0', port=5000)

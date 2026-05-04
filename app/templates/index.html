@@ -1,113 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameInsights Hub | Technical Demo</title>
+    <title>GamePulse: 12kk Huiput</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
-            --accent-color: #3d5afe;
-            --text-main: #e0e0e0;
-            --text-muted: #9e9e9e;
-            --score-color: #4caf50;
+        body { background-color: #0b0e14; color: white; overflow-x: hidden; }
+        .hero-section { padding: 30px 0; background: linear-gradient(180deg, #1a1f26 0%, #0b0e14 100%); }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            margin: 0;
-            padding: 2rem;
-            line-height: 1.6;
+        .sushi-container { overflow: hidden; white-space: nowrap; padding: 20px 0; position: relative; }
+        
+        .sushi-belt {
+            display: inline-flex;
+            animation: scroll 100s linear infinite; 
         }
+        
+        .sushi-belt:hover { animation-play-state: paused; }
 
-        header {
-            max-width: 1100px;
-            margin: 0 auto 3rem auto;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: var(--bg-secondary);
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #252525;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem 0;
-        }
-
-        .score-badge {
+        .game-card {
+            width: 280px;
+            margin: 0 15px;
+            background: #1a1f26;
+            border-radius: 12px;
+            border: 1px solid #2d343f;
             display: inline-block;
-            color: var(--score-color);
-            border: 1px solid var(--score-color);
-            padding: 0.2rem 0.5rem;
-            font-size: 0.85rem;
-            border-radius: 2px;
-            margin-bottom: 1rem;
+            vertical-align: top;
+            white-space: normal;
         }
 
-        .meta-data {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+        .game-img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px 12px 0 0; }
+        .badge-meta { background-color: #16a34a; font-weight: bold; margin-bottom: 5px; }
 
-        .meta-data div {
-            margin-bottom: 0.3rem;
+        .review-card {
+            width: 400px;
+            margin: 0 15px;
+            background: #252b36;
+            border-radius: 15px;
+            padding: 15px;
+            border-left: 5px solid #3b82f6;
+            display: inline-flex;
+            align-items: center;
+            white-space: normal;
         }
+        
+        .review-img { width: 70px; height: 70px; object-fit: cover; border-radius: 10px; margin-right: 15px; flex-shrink: 0; }
+        .quote { font-style: italic; color: #f8fafc; font-size: 1.05rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>GameInsights Hub</h1>
-    <p>Market Data Analysis: High-Rated Releases</p>
-</header>
+<div class="hero-section text-center">
+    <h1 class="display-5 fw-bold text-primary">GamePulse</h1>
+    <p class="text-muted">Viimeisen vuoden suosituimmat julkaisut</p>
+</div>
 
-<main class="grid">
-    {% for game in games %}
-    <article class="card">
-        <img src="{{ game.image }}" alt="" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">{{ game.name }}</h2>
-            <div class="score-badge">Metacritic: {{ game.rating }}</div>
-            
-            <div class="meta-data">
-                <div>Release Date: {{ game.released }}</div>
-                <div>Platforms: {{ game.platforms[:3]|join(', ') }}</div>
-                <div>Category: {{ game.genres[:2]|join(', ') }}</div>
+<div class="container-fluid mt-4">
+    <h3 class="ms-4"> Julkaisut (viimeiset 12 kk)</h3>
+    <div class="sushi-container">
+        <div class="sushi-belt">
+            {% for i in range(2) %}
+            {% for game in games %}
+            <div class="game-card">
+                <img src="{{ game.image }}" class="game-img">
+                <div class="p-3">
+                    <h6 class="text-truncate">{{ game.name }}</h6>
+                    {% if game.metacritic %}
+                    <span class="badge badge-meta">Metacritic: {{ game.metacritic }}</span>
+                    {% endif %}
+                    
+                    <!-- NOLLIEN PIILOTUS -->
+                    {% if game.user_rating > 0 %}
+                        <div class="text-warning fw-bold fs-6 mt-1">⭐ {{ game.user_rating }} / 5</div>
+                    {% else %}
+                        <div class="text-secondary fw-bold fs-6 mt-1">Odottaa arvioita</div>
+                    {% endif %}
+                </div>
             </div>
+            {% endfor %}
+            {% endfor %}
         </div>
-    </article>
-    {% endfor %}
-</main>
+    </div>
+
+    <h3 class="ms-4 mt-5"> Arvostelut</h3>
+    <div class="sushi-container">
+        <div class="sushi-belt" style="animation-direction: reverse; animation-duration: 140s;">
+            {% for i in range(2) %}
+            {% for game in games %}
+            <div class="review-card">
+                <img src="{{ game.image }}" class="review-img" alt="{{ game.name }}">
+                <div style="flex: 1;">
+                    <div class="quote">"{{ game.sentiment }}"</div>
+                    <div class="mt-1 fw-bold text-primary small">— {{ game.name }}</div>
+                    <div class="progress mt-2" style="height: 4px; background-color: #0b0e14;">
+                        <div class="progress-bar" style="width: {{ (game.user_rating / 5) * 100 }}%"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<footer class="text-center py-5 text-muted small">
+    &copy; 2026 GamePulse | Data by RAWG API
+</footer>
 
 </body>
 </html>

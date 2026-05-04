@@ -4,7 +4,7 @@ FROM python:3.9-slim
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy the app files and the requirements
+# Copy the app files and credentials
 COPY app/ /app/
 COPY .env /app/.env
 
