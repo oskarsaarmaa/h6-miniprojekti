@@ -3,6 +3,7 @@
 ## Projektin tarkoitus
 (tekstiä)
 
+## Screenshot tähän
 
 ---
 ## Asennus & Käyttöönotto
