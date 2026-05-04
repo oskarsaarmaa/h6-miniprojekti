@@ -6,7 +6,6 @@ WORKDIR /app
 
 # Copy the app files and credentials
 COPY app/ /app/
-COPY .env /app/.env
 
 # Install necessary libraries
 RUN pip install flask requests python-dotenv
