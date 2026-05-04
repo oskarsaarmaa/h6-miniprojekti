@@ -16,3 +16,7 @@ cd h6-miniprojekti
 sudo apt update
 sudo apt install ansible -y
 ```
+### 2. Aja Playbook
+```bash
+ansible-playbook playbook.yml
+```
