@@ -20,3 +20,7 @@ sudo apt install ansible -y
 ```bash
 ansible-playbook playbook.yml
 ```
+### 4. Avaa selaimessa
+```bash
+http://localhost:5000
+```
