@@ -118,3 +118,30 @@ if __name__ == "__main__":
    * tuotantoympäristössä API-avain tulisi syöttää ympäristömuuttujana tai Ansiblen Vaultilla, jotta se ei päädy versionhallintaan selkokielisenä.
 * try-except rakenne varmistaa, ettei koko sivu kaadu, jos esimerkiksi API-palvelu pätkisi hetkellisesti.
 * Docker konttien yhteensopivuus: host='0.0.0.0' on kriittinen asetus, joka sallii Flaskin kuunnella liikennettä Docker-verkon yli.
+
+### Lähteet
+**Hallinta ja automaatio:**
+* Ansible Documentation (Infrastruktuurin automaatio ja idempotentit playbookit):
+     * Ansible 2024: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks.html
+     * Ansible 2024: https://docs.ansible.com/projects/ansible/latest/collections/community/docker/index.html
+     * Tero Karvinen 2026: https://terokarvinen.com/palvelinten-hallinta/
+       
+**Docker kontitus:**
+* Docker Documentation:
+   * Docker Engine 2024: https://docs.docker.com/reference/dockerfile
+* Docker Hub - Python:
+   *  Docker Hub 2024: https://hub.docker.com/_/python
+     
+**API ja Flask**
+* Flask Documentation:
+     * Flask 2024: https://flask.palletsprojects.com/en/stable/api/#module-flask.json
+* RAWG API Documentation:
+     * RAWG 2026: https://api.rawg.io/docs/
+
+**Käyttöliittymä ja visualisointi**
+* Bootstrap 5:
+     * Bootstrap: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+       
+* MDN Web Docs: CSS Animations:
+     * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations
+     
