@@ -5,7 +5,7 @@ Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluks
 
 ## Screenshot tähän
 ```bash
-<img width="1867" height="713" alt="image" src="https://github.com/user-attachments/assets/349b381a-3e01-48d4-a162-119aec7b7fd8" />
+<img width="2312" height="883" alt="projektikuva" src="https://github.com/user-attachments/assets/fb8c9af3-41e1-44f0-aa4b-e496403da10d" />
 ```
 
 ---
