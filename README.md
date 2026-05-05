@@ -10,10 +10,11 @@ Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluks
 ## Tekijät
 Oskar Saarmaa & Miro Rautanen
 
+---
 
+## Lisenssi
 
-
-
+Projekti on toteutettu GNU General Public License v3.0 -lisenssillä
 
 ---
 ## Asennus & Käyttöönotto
