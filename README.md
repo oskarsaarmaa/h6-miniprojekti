@@ -3,6 +3,8 @@
 ## Projektin tarkoitus
 Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluksen joka kerää RAWG API:tä hyödyntäen Steamin pelidataa ja arvosteluja, sekä tarjoaa visuaalisen käyttöliittymän sen selaamiseen.
 
+Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä idempotenttiuden.
+
 <img width="2312" height="883" alt="projektikuva" src="https://github.com/user-attachments/assets/fb8c9af3-41e1-44f0-aa4b-e496403da10d" />
 
 ---
