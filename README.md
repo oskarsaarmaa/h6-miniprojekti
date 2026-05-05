@@ -34,7 +34,7 @@ Valmistele hallintatyökalu. Ansible suorittaa projektin automaation puolestasi.
 sudo apt update
 sudo apt install ansible -y
 ```
-### 3. Aja Automaattinen asennus
+### 3. Aja automaattinen asennus
 Aja Ansible-playbook. Voit käyttää -K lippua, tai vaihtoehtoisesti --ask-become-pass -lippua, jonka avulla Ansible pyytää pääkäyttäjän oikeuksia, joita tarvitaan jotta järjestelmään voidaan tehdä muutoksia.
 ```bash
 ansible-playbook playbook.yml -K
