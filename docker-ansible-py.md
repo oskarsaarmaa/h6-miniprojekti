@@ -16,7 +16,7 @@
 Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-kontin hallinnan. Playbook varmistaa, että vanhat versiot siivotaan pois tieltä ennen uuden rakentamista.
 
 ```yaml
----
+
 - name: Setup GamePulse Production Environment
   hosts: localhost
   connection: local
