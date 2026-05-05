@@ -19,7 +19,7 @@ Oskar Saarmaa & Miro Rautanen
 Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 
 ---
-## Asennus & Käyttöönotto
+## Asennus & käyttöönotto
 
 ### 1. Kloonaa repositorio
 Kloonaa repositorio ja siirry projektikansioon.
