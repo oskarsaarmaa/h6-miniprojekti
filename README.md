@@ -11,6 +11,7 @@ Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä i
 
 ## Tekijät
 Oskar Saarmaa - [github.com/oskarsaarmaa](https://github.com/oskarsaarmaa)
+
 Miro Rautanen - [github.com/miror01](https://github.com/miror01)
 
 ---
