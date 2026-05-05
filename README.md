@@ -1,9 +1,12 @@
-# (projektin nimi)
+# Steam pelidatan visualisointityökalu
 
 ## Projektin tarkoitus
-(tekstiä)
+Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluksen vetäen Steamin API:stä uusia videopelejä ja niiden arvosteluja, sekä tarjoaa visuaalisen käyttöliittymän niiden selaamiseen
 
 ## Screenshot tähän
+```bash
+<img width="1867" height="713" alt="image" src="https://github.com/user-attachments/assets/349b381a-3e01-48d4-a162-119aec7b7fd8" />
+```
 
 ---
 ## Asennus & Käyttöönotto
