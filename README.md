@@ -6,6 +6,16 @@ Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluks
 <img width="2312" height="883" alt="projektikuva" src="https://github.com/user-attachments/assets/fb8c9af3-41e1-44f0-aa4b-e496403da10d" />
 
 ---
+
+## Tekijät
+Oskar Saarmaa & Miro Rautanen
+
+
+
+
+
+
+---
 ## Asennus & Käyttöönotto
 
 ### 1. Kloonaa repositorio
