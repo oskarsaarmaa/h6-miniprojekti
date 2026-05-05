@@ -34,7 +34,7 @@ sudo apt install ansible -y
 ```
 ### 3. Aja playbook
 ```bash
-ansible-playbook playbook.yml
+ansible-playbook playbook.yml -K
 ```
 ### 4. Avaa selaimessa
 ```bash
