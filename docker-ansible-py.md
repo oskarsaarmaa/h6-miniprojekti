@@ -1,7 +1,7 @@
 
 ### Ansible-playbook 
 
-Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-kontin hallinnan. Playbook varmistaa, että vanhat versiot siivotaan pois tieltä ennen uuden rakentamista.
+Ansible-playbook käynnistää Docker-kontin automaattisesti mikä on kätevää, koska käyttäjällä ei pidä osata docker komentoja. Playbook varmistaa, että vanhat versiot siivotaan pois tieltä ennen uuden rakentamista.
 
 ```yaml
 
@@ -44,9 +44,9 @@ Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-konti
 
 ###  Dockerfile 
 
-`Dockerfile` on tiedosto, joka sisältää kaikki tarvittavat askeleet "levykuvan" (image) luomiseen. Käytin tässä **multi-stage build** -ajattelun sijaan selkeää ja suoraviivaista rakennetta.
+`Dockerfile` on tiedosto, joka sisältää kaikki tarvittavat askeleet "levykuvan" luomiseen. Käytin tässä **multi-stage build** -ajattelun sijaan selkeää ja suoraviivaista rakennetta.
 ```dockerfile
-# 1. Valitaan virallinen Python-pohja (kevyt versio säästää tilaa)
+# 1. Valitaan virallinen Python-pohja
 FROM python:3.9-slim
 
 # 2. Määritetään kansion polku kontin sisällä
@@ -66,7 +66,7 @@ CMD ["python", "main.py"]
 
 ```
 * Käyttämällä python:3.9-slim -pohjaa, kontin koko pidetään pienenä ja kevyeenä.
-* Sovellus ja sen riippuvuudet (flask, requests) on eristetty omaan kuplaansa, jolloin ne eivät sotkeudu tietokoneen muiden ohjelmien kanssa.
+* Sovellus ja sen riippuvuudet on eristetty omaan kuplaansa, jolloin ne eivät sotkeudu tietokoneen muiden ohjelmien kanssa.
 * Tiedosto määrittelee tarkan aloituskomennon, jolloin kontti tietää heti käynnistyessään, mitä sen pitää tehdä.
 
 ### Python
