@@ -39,7 +39,7 @@ cd h6-miniprojekti
 ```
 
 ### 3. Asenna Ansible
-Valmistele hallintatyökalu. Ansible suorittaa projektin automaation puolestasi.
+Valmistele hallintatyökalu. Ansible suorittaa projektin automaation puolestasi. **sudo apt update**-komentoa ei tarvita jos teit sen kohdassa 1.
 ```bash
 sudo apt update
 sudo apt install ansible -y
