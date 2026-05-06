@@ -24,9 +24,11 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 ---
 ## Asennus & käyttöönotto
 
-### 1. Kloonaa repositorio
-Kloonaa repositorio ja siirry projektikansioon.
+### 1. Asenna Git & Kloonaa repositorio
+Asenna git jos ei ole jo asennettu, ja kloonaa repositorio ja siirry projektikansioon.
 ```bash
+sudo apt update
+sudo apt install git
 git clone https://github.com/oskarsaarmaa/h6-miniprojekti
 cd h6-miniprojekti
 ```
