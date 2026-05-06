@@ -27,6 +27,7 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 ### 1. Asenna Git
 Asenna Git jos sitä ei ole jo asennettu.
 ```bash
+sudo apt update
 sudo apt install git
 ```
 
