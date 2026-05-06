@@ -54,7 +54,7 @@ h6-miniprojekti/
 ├── app/                    # Sovelluksen koodikansio
 │   ├── main.py             # Python-koodi: Hakee datan API:sta ja pyörittää Flask-palvelinta
 │   └── templates/          # HTML-pohjat
-│       └── index.html      # Käyttöliittymä: Sisältää sushihina-animaatiot ja CSS-tyylit
+│       └── index.html      # Käyttöliittymä: Sisältää sushihihna-animaatiot ja CSS-tyylit
 ├── Dockerfile              # Ohjekirja Dockerille: Miten sovellus paketoidaan kontiksi
 ├── playbook.yml            # Ansiblen ohjeet: Automatisoi koko asennusprosessin
 └── README.md               # Projektin dokumentaatio ja pikaohje
