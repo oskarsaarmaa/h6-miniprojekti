@@ -17,7 +17,7 @@ Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-konti
 
 ```yaml
 
-- name: Setup GamePulse Production Environment
+- name: Setup GamePulse 
   hosts: localhost
   connection: local
   become: yes
