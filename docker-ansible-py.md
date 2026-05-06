@@ -1,15 +1,3 @@
-## Projektin arkkitehtuuri ja tiedonkulku
-
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/87bc2c8b-2090-4e42-90f0-6697740d1782" />
-
-1. Hallintakerros (Ansible): Ansible toimii koko prosessin kapellimestarina. Se valmistelee kohdekoneen, varmistaa Dockerin tilan ja suorittaa automaattisesti sovelluksen rakentamisen ja käynnistyksen. Tämä poistaa manuaalisen työn tarpeen.
-2. Eristyskerros (Docker): Sovellus pakataan Docker-konttiin, joka sisältää kaiken tarvittavan: Python-ympäristön, Flask-kehyksen ja tarvittavat kirjastot. Kontitus takaa, että sovellus toimii identtisesti riippumatta siitä, missä se ajetaan.
-3. Sovelluskerros (Flask): Itse Pythonilla toteutettu Flask-sovellus on järjestelmän moottori. Se kommunikoi ulkoisen RAWG API:n kanssa hakeakseen reaaliaikaista pelidataa (JSON-muodossa) ja muuntaa sen visuaaliseksi  käyttäjälle.
-   
-
-
-
-
 
 ### Ansible-playbook 
 
