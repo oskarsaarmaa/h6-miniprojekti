@@ -7,6 +7,7 @@ Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä i
 
 <img width="2312" height="883" alt="projektikuva" src="https://github.com/user-attachments/assets/fb8c9af3-41e1-44f0-aa4b-e496403da10d" />
 
+
 ---
 
 ## Tekijät
@@ -46,3 +47,5 @@ Playbookin valmistuttua sovellus on nyt toiminnassa. Avaa selain ja mene osoitte
 ```bash
 http://localhost:5000
 ```
+
+https://youtu.be/SqjCALifdyQ
