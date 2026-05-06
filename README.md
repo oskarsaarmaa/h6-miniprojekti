@@ -1,7 +1,7 @@
 # Steam pelidatan visualisointityökalu
 
 ## Projektin tarkoitus
-Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluksen joka kerää RAWG API:tä hyödyntäen Steamin pelidataa ja arvosteluja, sekä tarjoaa visuaalisen käyttöliittymän sen selaamiseen.
+Projekti automatisoi Ansiblen ja Dockerin avulla Flask-pohjaisen verkkosovelluksen joka kerää RAWG API:tä hyödyntäen Steamin peli- ja arvosteludataa, sekä tarjoaa visuaalisen käyttöliittymän sen selaamiseen.
 
 Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä idempotenttiuden.
 
@@ -47,5 +47,19 @@ Playbookin valmistuttua sovellus on nyt toiminnassa. Avaa selain ja mene osoitte
 ```bash
 http://localhost:5000
 ```
-
-https://youtu.be/SqjCALifdyQ
+---
+## Rakenne
+```
+h6-miniprojekti/
+├── app/                    # Sovelluksen koodikansio
+│   ├── main.py             # Python-koodi: Hakee datan API:sta ja pyörittää Flask-palvelinta
+│   └── templates/          # HTML-pohjat
+│       └── index.html      # Käyttöliittymä: Sisältää sushihina-animaatiot ja CSS-tyylit
+├── Dockerfile              # Ohjekirja Dockerille: Miten sovellus paketoidaan kontiksi
+├── playbook.yml            # Ansiblen ohjeet: Automatisoi koko asennusprosessin
+└── README.md               # Projektin dokumentaatio ja pikaohje (tärkeä esittelyssä!)
+```
+---
+## Raportti sekä videodemo
+[Raportti](https://github.com/oskarsaarmaa/h6-miniprojekti/blob/main/docker-ansible-py.md)
+[Videodemo projektista](https://youtu.be/SqjCALifdyQ)
