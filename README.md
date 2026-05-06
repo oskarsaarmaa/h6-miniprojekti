@@ -61,9 +61,7 @@ h6-miniprojekti/
 ```
 ---
 ## Raportti sekä videodemo
-```
+
 [Raportti](https://github.com/oskarsaarmaa/h6-miniprojekti/blob/main/docker-ansible-py.md)
-```
-```
+
 [Videodemo projektista](https://youtu.be/SqjCALifdyQ)
-```
