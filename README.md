@@ -22,6 +22,16 @@ Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä i
 Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 
 ---
+## Esivaatimukset
+Asenna Git jos sitä ei ole jo asennettu. Tilan voi tarkistaa komennolla
+```bash
+git --version
+```
+Jos Git ei ole asennettuna asenna Git 
+```bash
+sudo apt install git
+```
+
 ## Asennus & käyttöönotto
 
 ### 1. Kloonaa repositorio
