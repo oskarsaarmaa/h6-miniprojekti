@@ -28,7 +28,7 @@ Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-konti
         name: game-insights-service
         state: absent
 
-    - name: Remove old image to ensure fresh build
+    - name: Remove old image 
       docker_image:
         name: game-insights-app
         state: absent
