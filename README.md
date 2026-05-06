@@ -57,7 +57,7 @@ h6-miniprojekti/
 │       └── index.html      # Käyttöliittymä: Sisältää sushihina-animaatiot ja CSS-tyylit
 ├── Dockerfile              # Ohjekirja Dockerille: Miten sovellus paketoidaan kontiksi
 ├── playbook.yml            # Ansiblen ohjeet: Automatisoi koko asennusprosessin
-└── README.md               # Projektin dokumentaatio ja pikaohje (tärkeä esittelyssä!)
+└── README.md               # Projektin dokumentaatio ja pikaohje
 ```
 ---
 ## Projektin raportti ja videodemo
