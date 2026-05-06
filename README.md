@@ -22,7 +22,9 @@ Kaikki hallitaan ansiblella, joka takaa nopean ja helpon käyttöönoton sekä i
 Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 
 ---
-## Esivaatimukset
+## Asennus & käyttöönotto
+
+### 1. Asenna Git
 Asenna Git jos sitä ei ole jo asennettu. Tilan voi tarkistaa komennolla
 ```bash
 git --version
@@ -32,27 +34,25 @@ Jos Git ei ole asennettuna asenna Git
 sudo apt install git
 ```
 
-## Asennus & käyttöönotto
-
-### 1. Kloonaa repositorio
+### 2. Kloonaa repositorio
 Kloonaa repositorio ja siirry projektikansioon.
 ```bash
 git clone https://github.com/oskarsaarmaa/h6-miniprojekti
 cd h6-miniprojekti
 ```
 
-### 2. Asenna Ansible
+### 3. Asenna Ansible
 Valmistele hallintatyökalu. Ansible suorittaa projektin automaation puolestasi.
 ```bash
 sudo apt update
 sudo apt install ansible -y
 ```
-### 3. Aja automaattinen asennus
+### 4. Aja automaattinen asennus
 Aja Ansible-playbook. Voit käyttää -K lippua, tai vaihtoehtoisesti --ask-become-pass -lippua, jonka avulla Ansible pyytää pääkäyttäjän oikeuksia, joita tarvitaan jotta järjestelmään voidaan tehdä muutoksia.
 ```bash
 ansible-playbook playbook.yml -K
 ```
-### 4. Testaa sovellus
+### 5. Testaa sovellus
 Playbookin valmistuttua sovellus on nyt toiminnassa. Avaa selain ja mene osoitteeseen:
 ```bash
 http://localhost:5000
