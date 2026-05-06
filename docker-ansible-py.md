@@ -40,7 +40,7 @@ Aloitin tekemällä Ansible-playbookin, koska halusin automatisoida Docker-konti
         name: game-insights-app
         source: build
 
-    - name: Start GamePulse container
+    - name: Start GamePulse 
       docker_container:
         name: game-insights-service
         image: game-insights-app
