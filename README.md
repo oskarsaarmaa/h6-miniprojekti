@@ -25,11 +25,7 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 ## Asennus & käyttöönotto
 
 ### 1. Asenna Git
-Asenna Git jos sitä ei ole jo asennettu. Tilan voi tarkistaa komennolla:
-```bash
-git --version
-```
-Jos Git ei ole asennettuna asenna Git.
+Asenna Git jos sitä ei ole jo asennettu.
 ```bash
 sudo apt install git
 ```
