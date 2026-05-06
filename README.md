@@ -24,11 +24,9 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 ---
 ## Asennus & käyttöönotto
 
-### 1. Asenna Git & Kloonaa repositorio
-Asenna git jos ei ole jo asennettu, ja kloonaa repositorio ja siirry projektikansioon.
+### 1. Kloonaa repositorio
+Kloonaa repositorio ja siirry projektikansioon.
 ```bash
-sudo apt update
-sudo apt install git
 git clone https://github.com/oskarsaarmaa/h6-miniprojekti
 cd h6-miniprojekti
 ```
@@ -51,7 +49,7 @@ http://localhost:5000
 ```
 ---
 ## Projektin rakenne
-```
+```bash
 h6-miniprojekti/
 ├── app/                    # Sovelluksen koodikansio
 │   ├── main.py             # Python-koodi: Hakee datan API:sta ja pyörittää Flask-palvelinta
