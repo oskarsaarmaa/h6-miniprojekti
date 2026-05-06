@@ -48,7 +48,7 @@ Playbookin valmistuttua sovellus on nyt toiminnassa. Avaa selain ja mene osoitte
 http://localhost:5000
 ```
 ---
-## Rakenne
+## Projektin rakenne
 ```
 h6-miniprojekti/
 ├── app/                    # Sovelluksen koodikansio
@@ -60,8 +60,8 @@ h6-miniprojekti/
 └── README.md               # Projektin dokumentaatio ja pikaohje (tärkeä esittelyssä!)
 ```
 ---
-## Raportti sekä videodemo
+## Projektin raportti ja videodemo
 
 [Raportti](https://github.com/oskarsaarmaa/h6-miniprojekti/blob/main/docker-ansible-py.md)
 
-[Videodemo projektista](https://youtu.be/SqjCALifdyQ)
+[Videodemo](https://youtu.be/SqjCALifdyQ)
