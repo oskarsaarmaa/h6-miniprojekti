@@ -78,7 +78,6 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-# RAWG API-avain
 RAWG_API_KEY = "8dd3b98aadc54844964a64bdc08ab6eb"
 
 @app.route('/')
