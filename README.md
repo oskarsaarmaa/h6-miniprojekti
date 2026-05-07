@@ -28,7 +28,7 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 Asenna Git jos sitä ei ole jo asennettu.
 ```bash
 sudo apt update
-sudo apt install git
+sudo apt install -y git ansible
 ```
 
 ### 2. Kloonaa repositorio
