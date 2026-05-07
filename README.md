@@ -24,7 +24,7 @@ Projekti on toteutettu GNU General Public License v3.0 -lisenssillä.
 ---
 ## Asennus & käyttöönotto
 
-### 1. Asenna Git
+### 1. Asenna Git ja Ansible
 Asenna Git jos sitä ei ole jo asennettu.
 ```bash
 sudo apt update
